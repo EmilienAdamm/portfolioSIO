@@ -116,5 +116,5 @@ function tableau() {
 }
 
 function cv() {
-    window.location.href="CV_ADAM_Emilien"
+    window.location.href="CV_ADAM_Emilien.pdf"
 }
