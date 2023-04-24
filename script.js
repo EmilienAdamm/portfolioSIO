@@ -120,5 +120,5 @@ function cv() {
 }
 
 function rappStage2() {
-    window.Location.href="Rapport_de_Stage_2.pdf"   
+    window.location.href="Rapport_de_Stage_2.pdf"   
 }
