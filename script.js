@@ -96,7 +96,7 @@ $( document ).ready(function() {
 // })
 
 function rappStage() {
-    window.location.href="Rapport_de_Stage"
+    window.location.href="Rapport_de_Stage.pdf"
 }
 
 function resAppli() {
