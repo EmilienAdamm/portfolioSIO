@@ -112,7 +112,7 @@ function bash() {
 }
 
 function tableau() {
-    window.location.href="tableau_synthese"
+    window.location.href="tableau_synthese.xlsx"
 }
 
 function cv() {
