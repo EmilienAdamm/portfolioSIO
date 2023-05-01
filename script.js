@@ -36,89 +36,76 @@ $(document).ready(function(){
     });
 })
 
-var typed = new Typed(".typing", {
-    strings: [" BTS SIO SLAM"],
+if (window.matchMedia("(min-width: 705px)").matches) {
+  var typed = new Typed(".typing", {
+    strings: ["-BTS SIO SLAM"],
     typeSpeed: 100,
     backSpeed: 100,
     loop: true
+  });
+}
+
+var multipleCardCarousel = document.querySelector("#carouselExampleControls");
+if (window.matchMedia("(min-width: 768px)").matches) {
+  var carousel = new bootstrap.Carousel(multipleCardCarousel, {
+    interval: false,
+  });
+  var carouselWidth = $(".carousel-inner")[0].scrollWidth;
+  var cardWidth = $(".carousel-item").width();
+  var scrollPosition = 0;
+
+  $("#carouselExampleControls .carousel-control-next").on("click", function () {
+    if (scrollPosition < carouselWidth - cardWidth * 4) {
+      scrollPosition += cardWidth;
+      $("#carouselExampleControls .carousel-inner").animate(
+        { scrollLeft: scrollPosition },
+        600
+      );
+    } else {
+      scrollPosition = 0;
+      $("#carouselExampleControls .carousel-inner").animate(
+        { scrollLeft: scrollPosition },
+        600
+      );
+    }
+  });
+
+  $("#carouselExampleControls .carousel-control-prev").on("click", function () {
+    if (scrollPosition > 0) {
+      scrollPosition -= cardWidth;
+      $("#carouselExampleControls .carousel-inner").animate(
+        { scrollLeft: scrollPosition },
+        600
+      );
+    } else {
+      scrollPosition = carouselWidth - cardWidth * 4;
+      $("#carouselExampleControls .carousel-inner").animate(
+        { scrollLeft: scrollPosition },
+        600
+      );
+    }
+  });
+} else {
+  $(multipleCardCarousel).addClass("slide");
+}
+
+$('#sio1').on('click', function() {
+  redirect("Rapport_de_stage.pdf");
+});
+
+$('#sio2').on('click', function() {
+  redirect("Rapport_de_stage_2.pdf");
+});
+
+$('#referencement').on('click', function() {
+  redirect("Referencement.pdf");
 });
 
 
-$( document ).ready(function() {
-    $(".parcours-box").removeClass("parcours-active");
-    
-    
-    $(".round1").on("click",function(){
-       $(".tl-round").css("background-color","rgb(255, 0, 0)");
-       $(".round1").css("background-color","red");
-       $(".parcours-active").removeClass("parcours-active");
-       $(".parc1").addClass("parcours-active");
-       $(".timeline-indicator").css("width","0");
-    })
-    
-    $(".round2").on("click",function(){
-       $(".tl-round").css("background-color","rgb(255, 0, 0)");
-       $(".round1").css("background-color","red");
-       $(".round2").css("background-color","red");
-       $(".parcours-active").removeClass("parcours-active");
-       $(".parc2").addClass("parcours-active");
-       $(".timeline-indicator").css("width","240");
-    })
-    
-    $(".round3").on("click",function(){
-       $(".tl-round").css("background-color","rgb(255, 0, 0)");
-       $(".round1").css("background-color","red");
-       $(".round2").css("background-color","red");
-       $(".round3").css("background-color","red");
-       $(".parcours-active").removeClass("parcours-active");
-       $(".parc3").addClass("parcours-active");
-       $(".timeline-indicator").css("width","480");
-    })
-    
-    $(".round4").on("click",function(){
-       $(".tl-round").css("background-color","rgb(255, 0, 0)");
-       $(".round1").css("background-color","red");
-       $(".round2").css("background-color","red");
-       $(".round3").css("background-color","red");
-       $(".round4").css("background-color","red");
-       $(".parcours-active").removeClass("parcours-active");
-       $(".parc4").addClass("parcours-active");
-       $(".timeline-indicator").css("width","720");
-    })
-    
-  });
+$('#synthese').on('click', function() {
+  redirect("Tableau_de_competences.pdf");
+});
 
-
-
-
-// const zoneRapp = document.getElementById("RappStage").addEventListener('click', async (e) => {
-//     window.location.href="Rapport_de_Stage"
-// })
-
-function rappStage() {
-    window.location.href="Rapport_de_Stage.pdf"
-}
-
-function resAppli() {
-    window.location.href="https://github.com/EmilienAdamm/resAppli"
-}
-
-function tpBlockchain() {
-    window.location.href="https://github.com/EmilienAdamm/TPBlockchain"
-}
-
-function bash() {
-    window.location.href="https://github.com/EmilienAdamm/savescripts"
-}
-
-function tableau() {
-    window.location.href="tableau_synthese.xlsx"
-}
-
-function cv() {
-    window.location.href="CV_ADAM_Emilien.pdf"
-}
-
-function rappStage2() {
-    window.location.href="Rapport_de_Stage_2.pdf"   
+function redirect(url) {
+  window.location.href = url;
 }
