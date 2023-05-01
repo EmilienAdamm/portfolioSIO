@@ -290,3 +290,11 @@ li {
       height: 17em;
     }
   }
+
+
+  .back-to-top {
+    position: fixed;
+    bottom: 3%;
+    right: 3%;
+    display: none;
+}
