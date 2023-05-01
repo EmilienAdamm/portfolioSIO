@@ -107,11 +107,11 @@ if (window.matchMedia("(min-width: 768px)").matches) {
 }
 
 $('#sio1').on('click', function() {
-  redirect("Rapport_de_stage.pdf");
+  redirect("Rapport_de_Stage.pdf");
 });
 
 $('#sio2').on('click', function() {
-  redirect("Rapport_de_stage_2.pdf");
+  redirect("Rapport_de_Stage_2.pdf");
 });
 
 $('#referencement').on('click', function() {
