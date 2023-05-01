@@ -79,29 +79,48 @@ li {
 }
 .scroll-up-btn {
     position: fixed;
-    height: 45px;
-    width: 42px;
+    height: 4vw;
+    width: 3.8vw;
     background: crimson;
-    right: 30px;
-    bottom: 10px;
+    right: 3vw;
+    bottom: 1vw;
     text-align: center;
-    line-height: 45px;
+    line-height: 4vw;
     color: #fff;
     z-index: 9999;
-    font-size: 30px;
+    font-size: 3vw;
     border-radius: 6px;
-    border-bottom-width: 2px;
+    border-bottom-width: 0.2vw;
     cursor: pointer;
     opacity: 0;
     pointer-events: none;
     transition: all 0.3s ease;
 }
 
+@media (min-width: 768px) {
+    .scroll-up-btn {
+        height: 40px;
+        width: 38px;
+        right: 30px;
+        bottom: 10px;
+        line-height: 40px;
+        font-size: 30px;
+        border-bottom-width: 2px;
+    }
+}
+
 .scroll-up-btn.show {
-    bottom: 30px;
+    bottom: 3vw;
     opacity: 1;
     pointer-events: auto;
 }
+
+@media (min-width: 768px) {
+    .scroll-up-btn.show {
+        bottom: 30px;
+    }
+}
+
 
 .secTitle {
     color: crimson;
